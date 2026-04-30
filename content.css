@@ -1,0 +1,49 @@
+/* Reddit Read-Only Mode CSS */
+
+/* Prevent interactions globally when in read-only mode */
+body.reddit-read-only {
+  /* We don't disable pointer-events globally, just specific interactive elements */
+}
+
+/* =========================================================
+   Selectors for Modern Reddit (sh.reddit.com / UI 2023+)
+   ========================================================= */
+body.reddit-read-only shreddit-composer,
+body.reddit-read-only faceplate-tracker[source="post_composer"],
+body.reddit-read-only button[aria-label^="Upvote"],
+body.reddit-read-only button[aria-label^="Downvote"],
+body.reddit-read-only button[aria-label^="Reply"],
+body.reddit-read-only [data-testid="create-post-button"],
+body.reddit-read-only a[href*="/submit"],
+body.reddit-read-only button[action="upvote"],
+body.reddit-read-only button[action="downvote"],
+
+/* =========================================================
+   Selectors for "New" Reddit (2018-2023)
+   ========================================================= */
+body.reddit-read-only [data-click-id="upvote"],
+body.reddit-read-only [data-click-id="downvote"],
+body.reddit-read-only [data-click-id="reply"],
+body.reddit-read-only [data-click-id="text"], /* Often used for comment boxes */
+body.reddit-read-only .DraftEditor-root,
+body.reddit-read-only button:has(.icon-upvote),
+body.reddit-read-only button:has(.icon-downvote),
+
+/* =========================================================
+   Selectors for Old Reddit (old.reddit.com)
+   ========================================================= */
+body.reddit-read-only .arrow.up,
+body.reddit-read-only .arrow.upmod,
+body.reddit-read-only .arrow.down,
+body.reddit-read-only .arrow.downmod,
+body.reddit-read-only .usertext-edit textarea,
+body.reddit-read-only .reply-button,
+body.reddit-read-only .submit-buttons,
+body.reddit-read-only .sidebox.submit {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+}
