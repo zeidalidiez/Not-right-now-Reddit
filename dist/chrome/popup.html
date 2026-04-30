@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reddit Focus Filter</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Focus Filter</h1>
+      <p class="subtitle">Reclaim your development hours.</p>
+    </header>
+
+    <main>
+      <div class="form-group">
+        <label for="enableToggle" class="switch-container">
+          <span class="label-text">Enable Filter</span>
+          <label class="switch">
+            <input type="checkbox" id="enableToggle">
+            <span class="slider round"></span>
+          </label>
+        </label>
+      </div>
+
+      <div class="card">
+        <h2>Schedule</h2>
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="startTime">Start Time</label>
+            <input type="time" id="startTime" value="09:00">
+          </div>
+          <div class="form-group half">
+            <label for="endTime">End Time</label>
+            <input type="time" id="endTime" value="17:00">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Mode</h2>
+        <div class="form-group mode-selector">
+          <label class="radio-card">
+            <input type="radio" name="mode" value="strict" checked>
+            <div class="radio-content">
+              <h3>Strict Block</h3>
+              <p>Completely prevents access to Reddit.</p>
+            </div>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="mode" value="readonly">
+            <div class="radio-content">
+              <h3>Read-Only</h3>
+              <p>Allows browsing, disables interactions.</p>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <button id="saveBtn" class="primary-btn">Save Settings</button>
+      <div id="statusMessage" class="status-message"></div>
+    </main>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

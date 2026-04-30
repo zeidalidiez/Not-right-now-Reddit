@@ -3,12 +3,6 @@
   "name": "Reddit Focus Filter",
   "version": "1.0",
   "description": "Prevents context-switching and time-drain on Reddit during active development hours.",
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "reddit-focus-filter@yourdomain.com",
-      "strict_min_version": "109.0"
-    }
-  },
   "permissions": [
     "declarativeNetRequest",
     "storage",
