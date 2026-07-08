@@ -6,6 +6,20 @@ A lightweight Manifest V3 browser extension that keeps Reddit from eating your f
 
 ---
 
+## Screenshots
+
+**Popup settings** — schedule focus hours and choose Strict block or Read-only:
+
+![Focus Filter popup settings](store/screenshot-popup-1280x800.png)
+
+**Strict block** — Reddit redirects to a calm interstitial until your window ends:
+
+![Strict block focus page](store/screenshot-blocked-1280x800.png)
+
+Store-ready assets live in [`store/`](store/) (1280×800 PNGs).
+
+---
+
 ## Features
 
 | Feature | Description |
