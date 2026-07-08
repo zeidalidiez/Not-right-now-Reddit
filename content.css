@@ -1,59 +1,126 @@
-/* Reddit Read-Only Mode CSS */
+/* Reddit Focus Filter — Read-Only mode styles */
 
-/* Prevent interactions globally when in read-only mode */
-body.reddit-read-only {
-  /* We don't disable pointer-events globally, just specific interactive elements */
+/* ---------------------------------------------------------------------------
+   Banner
+   --------------------------------------------------------------------------- */
+#rff-readonly-banner {
+  position: sticky;
+  top: 0;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #fef3c7;
+  background: linear-gradient(90deg, #78350f 0%, #92400e 50%, #78350f 100%);
+  border-bottom: 1px solid rgba(251, 191, 36, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
-/* =========================================================
-   Selectors for Modern Reddit (sh.reddit.com / UI 2023+)
-   ========================================================= */
+#rff-readonly-banner.rff-banner-hidden {
+  display: none !important;
+}
+
+#rff-readonly-banner .rff-banner-icon {
+  flex-shrink: 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+#rff-readonly-banner .rff-banner-text {
+  flex: 1;
+  min-width: 0;
+}
+
+#rff-readonly-banner .rff-banner-detail {
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+#rff-readonly-banner .rff-banner-dismiss {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fef3c7;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+#rff-readonly-banner .rff-banner-dismiss:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ---------------------------------------------------------------------------
+   Interactive controls — Modern Reddit (sh.reddit.com / 2023+)
+   Note: comment *trees* stay visible so users can still read.
+   --------------------------------------------------------------------------- */
 body.reddit-read-only shreddit-composer,
 body.reddit-read-only comment-composer-host,
 body.reddit-read-only faceplate-tracker[source="post_composer"],
 body.reddit-read-only faceplate-tracker[source="comment_composer"],
-body.reddit-read-only section[aria-label="Comments"],
-body.reddit-read-only shreddit-comment-tree,
-body.reddit-read-only #comment-tree,
+body.reddit-read-only [slot="comment-composer"],
+body.reddit-read-only [slot="post-composer"],
 body.reddit-read-only button[aria-label*="Upvote"],
 body.reddit-read-only button[aria-label*="Downvote"],
+body.reddit-read-only button[aria-label*="upvote" i],
+body.reddit-read-only button[aria-label*="downvote" i],
 body.reddit-read-only button[aria-label*="Reply"],
+body.reddit-read-only button[aria-label*="reply" i],
 body.reddit-read-only button[icon-name="reply"],
+body.reddit-read-only button[icon-name="upvote"],
+body.reddit-read-only button[icon-name="downvote"],
 body.reddit-read-only [data-testid="create-post-button"],
 body.reddit-read-only a[href*="/submit"],
 body.reddit-read-only button[action="upvote"],
 body.reddit-read-only button[action="downvote"],
 body.reddit-read-only button[action="reply"],
-body.reddit-read-only [slot="comment-composer"],
-body.reddit-read-only [slot="post-composer"],
+body.reddit-read-only shreddit-async-loader[bundlename*="composer" i],
 
-/* =========================================================
-   Selectors for "New" Reddit (2018-2023)
-   ========================================================= */
+/* ---------------------------------------------------------------------------
+   "New" Reddit (2018–2023)
+   --------------------------------------------------------------------------- */
 body.reddit-read-only [data-click-id="upvote"],
 body.reddit-read-only [data-click-id="downvote"],
 body.reddit-read-only [data-click-id="reply"],
-body.reddit-read-only [data-click-id="text"], /* Often used for comment boxes */
+body.reddit-read-only [data-click-id="text"],
 body.reddit-read-only .DraftEditor-root,
 body.reddit-read-only button:has(.icon-upvote),
 body.reddit-read-only button:has(.icon-downvote),
+body.reddit-read-only [id^="vote-arrows"],
 
-/* =========================================================
-   Selectors for Old Reddit (old.reddit.com)
-   ========================================================= */
+/* ---------------------------------------------------------------------------
+   Old Reddit (old.reddit.com)
+   --------------------------------------------------------------------------- */
 body.reddit-read-only .arrow.up,
 body.reddit-read-only .arrow.upmod,
 body.reddit-read-only .arrow.down,
 body.reddit-read-only .arrow.downmod,
+body.reddit-read-only .usertext-edit,
 body.reddit-read-only .usertext-edit textarea,
 body.reddit-read-only .reply-button,
 body.reddit-read-only .submit-buttons,
 body.reddit-read-only .sidebox.submit,
-body.reddit-read-only .commentarea {
+body.reddit-read-only .commentarea .usertext.cloneable,
+body.reddit-read-only .gold-wrap,
+body.reddit-read-only .give-gold-button,
+body.reddit-read-only a[data-event-action="comment"],
+body.reddit-read-only a[data-event-action="reply"],
+body.reddit-read-only .share-button {
   display: none !important;
-  opacity: 0 !important;
   pointer-events: none !important;
   visibility: hidden !important;
-  width: 0 !important;
-  height: 0 !important;
+}
+
+/* Soften vote containers so layout doesn't collapse awkwardly */
+body.reddit-read-only [id^="vote-arrows"],
+body.reddit-read-only .midcol {
+  min-width: 0 !important;
 }
