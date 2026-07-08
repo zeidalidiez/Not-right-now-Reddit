@@ -1,0 +1,62 @@
+Privacy Policy — Reddit Focus Filter ("Not right now, Reddit")
+Effective date: July 8, 2026
+
+SUMMARY
+We do not collect, transmit, sell, or share personal data. The extension works
+entirely on your device. There are no accounts, analytics, advertising trackers,
+or remote servers operated by us for this product.
+
+INFORMATION STORED ON YOUR DEVICE
+To provide its features, the extension may store the following preferences
+locally in your browser (for example, chrome.storage.local):
+
+  - Whether the filter is enabled
+  - Your chosen start and end times (focus schedule)
+  - Your chosen mode (strict block or read-only)
+  - Internal status flags used only to apply those settings
+
+This information never leaves your device through the extension. It is not
+uploaded or shared with third parties by us. (Your browser may sync extension
+data if you have browser sync enabled; that is controlled by your browser
+vendor, not by this extension.)
+
+DATA WE DO NOT COLLECT
+The extension does not collect or request:
+
+  - Personally identifiable information (name, email, address, etc.)
+  - Health, financial, or authentication information
+  - Personal communications
+  - Location (schedule times use your device clock only)
+  - A log or history of websites you visit
+  - Clicks, keystrokes, mouse movement, or other activity monitoring
+  - Website content (text, images, video) for storage or transmission
+
+HOW PERMISSIONS ARE USED
+  - Storage: Saves your schedule and mode preferences on your device.
+  - Alarms: Re-checks your schedule so blocking or read-only mode turns on
+    and off at the right times.
+  - declarativeNetRequest: When strict block is active, redirects navigations
+    to Reddit to an in-extension focus page.
+  - Host access to *.reddit.com: Applies read-only UI changes on Reddit and
+    enforces the strict block for Reddit only. Page content is not scraped,
+    stored, or sent anywhere.
+
+THIRD PARTIES
+The extension does not include third-party analytics, advertising SDKs, or
+remote code. It does not sell or transfer user data to third parties.
+Optional links on the blocked page are ordinary hyperlinks you may choose to
+open; they are not used to collect data through the extension.
+
+CHILDREN
+The extension is not directed at children and does not knowingly collect
+personal information from anyone.
+
+CHANGES
+If this policy changes, we will update this file and the effective date above.
+
+CONTACT
+For privacy questions, open an issue on the project repository:
+https://github.com/zeidalidiez/Not-right-now-Reddit
+
+SINGLE PURPOSE
+Help users limit Reddit access or interactions during scheduled focus hours.
